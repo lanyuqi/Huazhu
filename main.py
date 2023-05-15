@@ -31,13 +31,16 @@ sckey = os.environ['SCKEY']
 server_url = f"https://sc.ftqq.com/{sckey}.send"
 
 if response.status_code == 200:
+    message_title = "OK"
     message = f"ok,status code: {response.status_code}, response text: {response.text}"
 else:
+    message_title = "Sorry"
     message = f"no, status code: {response.status_code}, response text: {response.text}"
 
 server_data = {
-    "text": "Script Result",
+    "text": message_title,
     "desp": message
 }
+
 
 requests.post(server_url, data=server_data)
