@@ -3,7 +3,7 @@ name: Run Python main
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '10 16 * * *'  # 每天午夜运行
+    - cron:  '30 16 * * *'  # 每天午夜运行
 
 jobs:
   build:
@@ -23,6 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install requests
+        pip install pytz
 
     - name: Run script
       env:
