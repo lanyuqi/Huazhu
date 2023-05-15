@@ -1,5 +1,6 @@
 import os
 import requests
+import pytz
 import json
 from datetime import datetime
 
@@ -21,8 +22,9 @@ headers = {
     "Connection": "keep-alive"
 }
 
-curren_day = datetime.now().day
-data = f"state=1&day={curren_day}"
+beijing_tz = pytz.timezone('Asia/Shanghai')
+beijing_time = datetime.now(beijing_tz)
+data = f"state=1&day={beijing_time.day}"
 
 response = requests.post(url, headers=headers, data=data)
 
