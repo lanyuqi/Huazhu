@@ -26,6 +26,6 @@ jobs:
 
     - name: Run script
       env:
-        MY_COOKIE: ${{ secrets.MY_COOKIE }}
-        SCKEY: ${{ secrets.SCKEY }}
+        MY_COOKIE: "${{ secrets.MY_COOKIE }}"
+        SCKEY: "${{ secrets.SCKEY }}"
       run: python main.py
