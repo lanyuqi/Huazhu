@@ -8,9 +8,12 @@ url = "https://hweb-mbf.huazhu.com/api/signIn"
 
 headers = {
     "Host": "hweb-mbf.huazhu.com",
+    "Connection": "keep-alive",
     "Accept": "application/json, text/plain, */*",
-    "Accept-Encoding": "gzip, deflate, brgzip, deflate, br",
+    "Sec-Fetch-Site": "same-site",
     "Accept-Language": "zh-CN,zh-Hans;q=0.9",
+    "Accept-Encoding": "gzip, deflate, brgzip, deflate, br",
+    "Sec-Fetch-Mode": "cors",
     "Content-Type": "application/x-www-form-urlencoded",
     "Origin": "https://campaign.huazhu.com",
     "User-Agent": "HUAZHU/ios/iPhone14,3/16.3.1/9.9.0/HUAZHU/ios/iPhone14,3/16.3.1/9.9.0/Mozilla/5.0 (iPhone; CPU iPhone OS 16_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
@@ -18,8 +21,8 @@ headers = {
     "Referer": "https://campaign.huazhu.com/",
     "User-Token": "null",
     "Content-Length": "14",
-    "Cookie": os.environ['MY_COOKIE'],
-    "Connection": "keep-alive"
+    "Sec-Fetch-Dest": "empty",
+    "Cookie": os.environ['MY_COOKIE']
 }
 
 beijing_tz = pytz.timezone('Asia/Shanghai')
